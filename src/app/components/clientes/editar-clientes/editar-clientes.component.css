@@ -1,0 +1,20 @@
+/* En tu archivo CSS o SCSS personalizado */
+/* Ajusta el tamaño del label */
+.mat-form-field-label {
+    font-size: 20px; /* Elige el tamaño que desees */
+  }
+  
+  /* Ajusta el tamaño del input container */
+  .mat-input-container {
+    font-size: 20px; /* Elige el tamaño que desees */
+  }
+  
+  /* Ajusta el tamaño del placeholder */
+  .mat-input-placeholder {
+    font-size: 20px; /* Elige el tamaño que desees */
+  }
+  
+  /* Ajusta el tamaño del texto ingresado */
+  .mat-input-element {
+    font-size: 20px; /* Elige el tamaño que desees */
+  }

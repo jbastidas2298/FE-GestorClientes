@@ -1,0 +1,22 @@
+<div class="row mt-1">
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card border-secondary mb-3" style="max-width: 20rem;">
+            <div class="card-header text-center" >Editar Cliente</div>
+            <div class="card-body ">
+                <form [formGroup]="clienteForm"class="text-center">
+                    <mat-form-field>
+                        <mat-label>Nombre</mat-label>
+                        <input formControlName="nombre" class="form-control mt-5"  placeholder="Nombre" matInput >
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Apellido</mat-label>
+                        <input formControlName="apellido" class="form-control mt-5"  placeholder="Apellido" matInput >
+                    </mat-form-field>
+                    <div class="mt-2 text-center">
+                        <button [disabled]="clienteForm.invalid" (click)="editar()" type="submit" class="btn btn-success">Guardar</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+    </div>
+</div>

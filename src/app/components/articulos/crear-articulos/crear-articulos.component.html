@@ -1,0 +1,26 @@
+<div class="row mt-1">
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card border-secondary mb-3" style="max-width: 20rem;">
+            <div class="card-header text-center" >Crear Artículos</div>
+            <div class="card-body ">
+                <form [formGroup]="articuloForm"class="text-center">
+                    <mat-form-field>
+                        <mat-label>Nombre</mat-label>
+                        <input formControlName="nombre" class="form-control mt-3"  placeholder="Nombre" matInput >
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Precio</mat-label>
+                        <input formControlName="precio" class="form-control mt-3"  placeholder="Precio" matInput >
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Código</mat-label>
+                        <input formControlName="codigo" class="form-control mt-3"  placeholder="Código" matInput >
+                    </mat-form-field>
+                    <div class="mt-2 text-center">
+                        <button [disabled]="articuloForm.invalid" (click)="guardar()" type="submit" class="btn btn-success">Guardar</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+    </div>
+</div>

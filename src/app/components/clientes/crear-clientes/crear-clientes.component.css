@@ -1,0 +1,13 @@
+.card{
+    margin-top: 100px;
+    text-align: center;
+
+}
+.mat-form-field{
+    width: 100%;
+}
+.title{
+    padding: 1px;
+    background-color:  aquamarine;
+    text-align: center;
+}

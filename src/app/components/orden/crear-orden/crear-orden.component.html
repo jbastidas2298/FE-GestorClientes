@@ -1,0 +1,53 @@
+<div class="row mt-1">
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card border-secondary mb-3" style="max-width: 100rem; height: 50rem;">
+            <div class="card-header text-center" >Crear Orden</div>
+            <div class="card-body ">
+                <form [formGroup]="ordenForm"class="text-center">
+                        <div class="col-12">
+                            <div class="input-group">
+                            </div>
+                        </div>
+                    <label for="exampleSelect1" class="form-label mt-1">Seleccione Cliente</label>              
+                    <select class="form-select" id="exampleSelect1" id="clienteId" formControlName="clienteId">
+                        <option *ngFor="let cliente of listaClientes" [value]="cliente.id">{{ cliente.nombre + ' ' + cliente.apellido }}</option>
+                    </select>
+                    <div class="mt-2 text-center">
+                        <button  (click)="obtenerArticulos()" type="submit" class="btn btn-success">Buscar Artículos</button>
+                    </div>
+                    <div class="col-12 mat-elevation-z8">
+                        <table mat-table [dataSource]="table" matSort class="hoverTable">
+                            <ng-container matColumnDef="articuloId">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+                                <td mat-cell *matCellDef="let row"> {{row.articuloId}} </td>
+                            </ng-container>
+                            <ng-container matColumnDef="nombre">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+                              <td mat-cell *matCellDef="let row"> {{row.nombre}} </td>
+                          </ng-container>
+                          <ng-container matColumnDef="precio">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> Precio </th>
+                              <td mat-cell *matCellDef="let row"> {{row.precio}} </td>
+                          </ng-container>
+                            <ng-container matColumnDef="codigo">
+                              <th mat-header-cell *matHeaderCellDef mat-sort-header> Código </th>
+                              <td mat-cell *matCellDef="let row"> {{row.codigo}} </td>
+                          </ng-container>
+                  
+                            <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+                            <tr mat-row *matRowDef="let row; columns: columnas;"></tr>
+                  
+                            <tr class="mat-row" *matNoDataRow>
+                                <td class="mat-cell" colspan="4">No existe registros</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="mt-2 text-center">
+                        <button [disabled]="ordenForm.invalid" (click)="guardar()" type="submit" class="btn btn-success">Guardar</button>
+                    </div>
+                </form>
+            </div>
+          </div>
+    </div>
+</div>
+
